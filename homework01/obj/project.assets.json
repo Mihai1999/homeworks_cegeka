@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dragh\\source\\repos\\cegeka\\homework01\\homework01.csproj",
+      "projectUniqueName": "C:\\Users\\dragh\\Source\\Repos\\Mihai1999\\homeworks_cegeka\\homework01\\homework01.csproj",
       "projectName": "homework01",
-      "projectPath": "C:\\Users\\dragh\\source\\repos\\cegeka\\homework01\\homework01.csproj",
+      "projectPath": "C:\\Users\\dragh\\Source\\Repos\\Mihai1999\\homeworks_cegeka\\homework01\\homework01.csproj",
       "packagesPath": "C:\\Users\\dragh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dragh\\source\\repos\\cegeka\\homework01\\obj\\",
+      "outputPath": "C:\\Users\\dragh\\Source\\Repos\\Mihai1999\\homeworks_cegeka\\homework01\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

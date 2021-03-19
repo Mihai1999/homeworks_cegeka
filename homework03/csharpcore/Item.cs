@@ -10,13 +10,66 @@ namespace csharpcore
         public int Quality { get; set; }
 
     }
-	public class StandardItem : Item
-	{
-		public StandardItem(Item i)
+	public class CustomItem : Item {
+		public CustomItem(Item i)
 		{
 			this.Name = i.Name;
 			this.SellIn = i.SellIn;
 			this.Quality = i.Quality;
+		}
+
+		public CustomItem() { }
+
+		public void UpdateState()
+		{
+
+			UpdateQuality();
+
+			if (SellIn > 0)
+			{
+				UpdateSellIn();
+			}
+
+
+			checkQuality();
+			
+
+		}
+		public virtual  void UpdateQuality()
+		{
+
+		}
+
+		public virtual void UpdateSellIn()
+		{
+
+		}
+
+		public virtual void checkQuality()
+		{
+			if (Quality > 50)
+			{
+				Quality = 50;
+			}
+			else if (Quality < 0)
+			{
+				Quality = 0;
+			}
+		}
+
+		public override string ToString()
+		{
+			return new String(this.Name + " " + this.SellIn + " " + this.Quality);
+		}
+
+	}
+
+	public class StandardItem : CustomItem
+	{
+		public StandardItem(Item i)
+			: base(i)
+		{
+			
 		}
 
 		public StandardItem()
@@ -24,22 +77,10 @@ namespace csharpcore
 
 		}
 
-		public void UpdateState()
+		
+
+		public override void UpdateQuality()
 		{
-			if (Quality < 50 && Quality > 0)
-			{
-				UpdateQuality();
-			}
-			
-
-			UpdateSellIn();
-
-		}
-
-		public virtual void UpdateQuality()
-		{
-
-			
 
 			if (SellIn > 0)
 			{
@@ -51,21 +92,24 @@ namespace csharpcore
 				Quality -= 2;
 
 			}
+
+			
 		}
 
-		public virtual void UpdateSellIn()
+		public override void UpdateSellIn()
 		{
 			SellIn--;
 		}
 
 	}
 
-	public class Sulfuras : StandardItem
+	public class Sulfuras : CustomItem
 	{
-		public Sulfuras()
+		public Sulfuras(Item i)
 		{
+			Name = i.Name;
 			Quality = 80;
-			SellIn = int.MaxValue;
+			SellIn = i.SellIn;
 		}
 
 		public override void  UpdateSellIn()
@@ -77,20 +121,25 @@ namespace csharpcore
 		{
 
 		}
+
+		public override void checkQuality()
+		{
+			
+		}
 	}
 
-	public class AgedBrie : StandardItem
+	public class AgedBrie : CustomItem
 	{
 		public AgedBrie(Item i): base(i) { }
 		public override void UpdateQuality()
 		{
-			Quality = Quality < 50 ? Quality + 1 : Quality;
+			Quality += 1;
 
 		}
 
 	}
 
-	public class BackstagePasses : StandardItem
+	public class BackstagePasses : CustomItem
 	{
 		public BackstagePasses(Item i) : base(i) { }
 		public override void UpdateQuality()
@@ -102,7 +151,7 @@ namespace csharpcore
 		}
 	}
 
-	public class Conjured : StandardItem
+	public class Conjured : CustomItem
 	{
 		public Conjured(Item i) : base(i) { }
 		public override void UpdateQuality()
@@ -128,22 +177,28 @@ namespace csharpcore
 
 			dict[STANDARD] = new StandardItem(i);
 			dict[AgedBrie] = new AgedBrie(i);
-			dict[Sulfuras] = new Sulfuras();
+			dict[Sulfuras] = new Sulfuras(i);
 			dict[Backstage] = new BackstagePasses(i);
 			dict[Conjured] = new Conjured(i);
 
 		}
 
-		public T GetObject<T>(T i) where T : Item
+		public CustomItem GetCustomItem(Item i) 
 		{
-
+			//Console.WriteLine("GetCustomItem: " + i.Name);
+			//Console.WriteLine("2: " + i.Name.ToLower().Contains(AgedBrie.ToLower()));
 			foreach (var it in dict)
 			{
-				if (i.Name.Contains(it.Key.ToString().ToLower()))
-					return (T)it.Value;
+				
+				if (i.Name.ToLower().Contains(it.Key.ToString().ToLower()))
+				{
+					//Console.WriteLine("1: " + i.Name + " " + it.Value);
+					return (CustomItem)it.Value;
+				}
+					
 			}
 
-			return (T)dict[STANDARD];
+			return (CustomItem)dict[STANDARD];
 		}
 
 

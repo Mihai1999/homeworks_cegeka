@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n/g4r0ObhX8Wb4dIvi5/klKkFr3dP4tO3jwe1YlNXuspOIIJ/0k+fBn7+lNKhwvFXlTABd9dYjlwYNYjWFS8GA==",
+  "dgSpecHash": "X2UT1lvBRkQhLHldWCtbJacYqSaUwxneMzGTdpMh52KPUyHMrAgdYTLwJv2NC4gZKMLTBH/YsGfI7Wm9fWQ9ag==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dragh\\source\\repos\\radu-solca\\CegekaAcademy2021.CSharpExercise\\GenericsExercise.Tests\\GenericsExercise.Tests.csproj",
+  "projectFilePath": "C:\\Users\\dragh\\source\\repos\\Mihai1999\\homeworks_cegeka\\homework02\\GenericsExercise.Tests\\GenericsExercise.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dragh\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\dragh\\.nuget\\packages\\fluentassertions\\5.10.3\\fluentassertions.5.10.3.nupkg.sha512",

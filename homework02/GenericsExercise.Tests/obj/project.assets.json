@@ -5876,11 +5876,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dragh\\source\\repos\\radu-solca\\CegekaAcademy2021.CSharpExercise\\GenericsExercise.Tests\\GenericsExercise.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\dragh\\source\\repos\\Mihai1999\\homeworks_cegeka\\homework02\\GenericsExercise.Tests\\GenericsExercise.Tests.csproj",
       "projectName": "GenericsExercise.Tests",
-      "projectPath": "C:\\Users\\dragh\\source\\repos\\radu-solca\\CegekaAcademy2021.CSharpExercise\\GenericsExercise.Tests\\GenericsExercise.Tests.csproj",
+      "projectPath": "C:\\Users\\dragh\\source\\repos\\Mihai1999\\homeworks_cegeka\\homework02\\GenericsExercise.Tests\\GenericsExercise.Tests.csproj",
       "packagesPath": "C:\\Users\\dragh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dragh\\source\\repos\\radu-solca\\CegekaAcademy2021.CSharpExercise\\GenericsExercise.Tests\\obj\\",
+      "outputPath": "C:\\Users\\dragh\\source\\repos\\Mihai1999\\homeworks_cegeka\\homework02\\GenericsExercise.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5900,8 +5900,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\dragh\\source\\repos\\radu-solca\\CegekaAcademy2021.CSharpExercise\\GenericsExercise.Console\\GenericsExercise.Console.csproj": {
-              "projectPath": "C:\\Users\\dragh\\source\\repos\\radu-solca\\CegekaAcademy2021.CSharpExercise\\GenericsExercise.Console\\GenericsExercise.Console.csproj"
+            "C:\\Users\\dragh\\source\\repos\\Mihai1999\\homeworks_cegeka\\homework02\\GenericsExercise.Console\\GenericsExercise.Console.csproj": {
+              "projectPath": "C:\\Users\\dragh\\source\\repos\\Mihai1999\\homeworks_cegeka\\homework02\\GenericsExercise.Console\\GenericsExercise.Console.csproj"
             }
           }
         }

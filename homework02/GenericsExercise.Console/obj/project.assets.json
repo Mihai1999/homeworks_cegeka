@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dragh\\Source\\Repos\\radu-solca\\CegekaAcademy2021.CSharpExercise\\GenericsExercise.Console\\GenericsExercise.Console.csproj",
+      "projectUniqueName": "C:\\Users\\dragh\\source\\repos\\Mihai1999\\homeworks_cegeka\\homework02\\GenericsExercise.Console\\GenericsExercise.Console.csproj",
       "projectName": "GenericsExercise.Console",
-      "projectPath": "C:\\Users\\dragh\\Source\\Repos\\radu-solca\\CegekaAcademy2021.CSharpExercise\\GenericsExercise.Console\\GenericsExercise.Console.csproj",
+      "projectPath": "C:\\Users\\dragh\\source\\repos\\Mihai1999\\homeworks_cegeka\\homework02\\GenericsExercise.Console\\GenericsExercise.Console.csproj",
       "packagesPath": "C:\\Users\\dragh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dragh\\Source\\Repos\\radu-solca\\CegekaAcademy2021.CSharpExercise\\GenericsExercise.Console\\obj\\",
+      "outputPath": "C:\\Users\\dragh\\source\\repos\\Mihai1999\\homeworks_cegeka\\homework02\\GenericsExercise.Console\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

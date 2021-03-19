@@ -7,6 +7,7 @@ namespace csharpcore
     {
         public static void Main(string[] args)
         {
+            
             Console.WriteLine("OMGHAI!");
 
             IList<Item> Items = new List<Item>{
@@ -51,6 +52,26 @@ namespace csharpcore
                 Console.WriteLine("");
                 app.UpdateQuality();
             }
+
+            //Test();
         }
+
+        public static void Test()
+		{
+            Item i1 = new Item
+            {
+                Name = "Aged Brie",
+                SellIn = 2,
+                Quality = 0,
+            };
+
+            List<Item> items = new List<Item>();
+            items.Add(i1);
+
+            var app = new GildedRose(items);
+
+            app.UpdateQuality();
+
+		}
     }
 }

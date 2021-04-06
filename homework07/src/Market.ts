@@ -7,7 +7,6 @@ export default class Market {
 
   public products: Product[];
   public customers: Customer[];
-  
   public orders: Order[];
 
   constructor(){
@@ -77,7 +76,7 @@ export default class Market {
     product.stock += value;
   }
 
-  CreteaCustomer(c:Customer){
+  CreateCustomer(c:Customer){
     this.customers.push(c);
   }
 

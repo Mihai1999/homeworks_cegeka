@@ -10,7 +10,9 @@ export default class Favorites {
   }
 
   Add(p: Product){
+    console.log("Added to favorites")
     this.list.push(p);
+    this.Show();
   }
 
   Show(){

@@ -10,8 +10,8 @@ var market = new Market();
 //market.Show();
 var c1 = new Customer("Mihai", "parola123", "mihai@yahoo.com", 1);
 var c2 = new Customer("customer2", "parola123", "customer@yahoo.com", 1);
-market.CreteaCustomer(c1); 
-market.CreteaCustomer(c2);
+market.CreateCustomer(c1); 
+market.CreateCustomer(c2);
 var p1 = new Product(3, "pizza", "ristorante", 24, 25)
 var p2 = new Product(4, "adidasi nike", "ccc shoes", 10, 200)
 market.AddProduct(p1);

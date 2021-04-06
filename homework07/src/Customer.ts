@@ -9,7 +9,7 @@ export default class Customer{
   password:string;
   email:string;
   balance:number;
-  public favorites: Favorites;
+  favorites: Favorites;
 
 
   constructor(username:string, password:string, email:string, id:number) {

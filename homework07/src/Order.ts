@@ -31,9 +31,7 @@ export default class Order{
 
     }
 
-    if(this.item.price > 1000  && this.customer.favorites.list.filter((p, idx) => {
-      return(p.id == this.item.id )
-    }) != undefined ) discount += 0.25;
+    if(this.isItemOnFavoritesAndPriceHigherThan1000(this.item, this.customer)) discount += 0.25;
 
     this.item.stock -= this.quantity;
 
@@ -50,6 +48,15 @@ export default class Order{
 
     return true;
 
+  }
+
+  isItemOnFavoritesAndPriceHigherThan1000(item: Product, customer: Customer ){
+    var favorites = this.customer.favorites.list
+    var result = this.item.price > 1000  && favorites.filter((p, idx) => {
+      return(p.id == this.item.id )
+    }) != undefined;
+
+    return result;
   }
 
 

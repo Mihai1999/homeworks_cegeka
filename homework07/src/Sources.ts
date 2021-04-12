@@ -14,10 +14,10 @@ export default class Sources {
 
   AddValues(){
 
-    var p1 = new Product(1, "nume", "provider", 32, 1500);
-    var p2 = new Product(2, "abcdefg", "hijklmn", 32, 100);
+    var product1 = new Product(1, "nume", "provider", 32, 1500);
+    var product2 = new Product(2, "abcdefg", "hijklmn", 32, 100);
 
-    this.products.push(p1, p2);
+    this.products.push(product1, product2);
   }
   
   GetProducts(){

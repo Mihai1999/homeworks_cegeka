@@ -18,7 +18,7 @@ export default class Market {
     this.orders = new Array<Order>();
   }
 
-  GetById(id:number){
+  GetProductById(id:number){
     var product = this.products.filter((p, idx) =>{
       return (p.id == id);
     })[0]
@@ -36,7 +36,7 @@ export default class Market {
 
   AddToFavorites(id: number, customerid:number){
     
-    var product = this.GetById(id);
+    var product = this.GetProductById(id);
     var customer = this.GetCustomer(customerid);
     //customer.favorites.Add(product);
     customer.AddFavorites(product);
@@ -45,14 +45,14 @@ export default class Market {
 
   Like(id:number){
 
-    var product = this.GetById(id);
+    var product = this.GetProductById(id);
     product.IncrementLIKE(1);
 
   }
 
   PlaceOrder(productid:number, customerid: number, quantity:number){
 
-    var product = this.GetById(productid);
+    var product = this.GetProductById(productid);
     var customer = this.GetCustomer(customerid);
     var order = new Order(customer, product, quantity, this);
     var discount = 0;
@@ -72,7 +72,7 @@ export default class Market {
   }
 
   RefillStock(id:number, value:number){
-    var product = this.GetById(id);
+    var product = this.GetProductById(id);
     product.stock += value;
   }
 

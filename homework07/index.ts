@@ -19,13 +19,13 @@ market.AddProduct(p2);
 //market.Show();
 
 // service 1, increment likeability for a product
-var p3 = market.GetById(3);
+var p3 = market.GetProductById(3);
 console.log(p3);
 for(let i=0; i<6; i++){
   market.Like(3);
 }
 
-var p4 = market.GetById(3);
+var p4 = market.GetProductById(3);
 console.log(p4);
 
 // likeability discount, if libeability > 5  discount 10%
@@ -38,9 +38,9 @@ market.PlaceOrder(4, 1, 5)
 
 
 //refill s tock
-console.log(market.GetById(3).stock);
+console.log(market.GetProductById(3).stock);
 market.RefillStock(3, 10);
-console.log(market.GetById(3).stock);
+console.log(market.GetProductById(3).stock);
 
 //add product to favorites with price > 1000 than buy it\
 var p5 = new Product(5, "ceva scump", "balenciaga", 2, 1500)

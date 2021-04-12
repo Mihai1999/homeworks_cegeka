@@ -22,56 +22,22 @@ namespace GenericsExercise.Console
                 case "0": return false;
                 case "1":
 					{
-                        System.Console.WriteLine("Write Id(string between 1-10 without %)" +
-                            ", First and Last Name for student. Each on different lines.");
-
-                        string id = System.Console.ReadLine();
-                        string fn = System.Console.ReadLine();
-                        string ln = System.Console.ReadLine();
-
-                        Student s = new Student(id, fn, ln);
-
-                        studentService.Insert(s);
-
+                        InsertStudent();
                         break;
                     }
                 case "2":
 					{
-                        System.Console.WriteLine("Write Id(string between 1-10 without %)" +
-                            ", Name and Address for university. Each on different lines.");
-
-                        string id = System.Console.ReadLine();
-                        string name = System.Console.ReadLine();
-                        string address = System.Console.ReadLine();
-
-                        University uni = new University(id, name, address);
-
-                        universityService.Insert(uni);
+                        InsertUniversity();
                         break;
                     }
                 case "3":
                     {
-
-                       
-                        var students = studentService.GetAll();
-                        
-                        
-						foreach (var el in students)
-						{
-                            System.Console.WriteLine(el.ToString()); 
-						}
-                       
+                        PrintStudents();
                         break;
 				    }
                 case "4":
 					{
-                        var universities = universityService.GetAll();
-                        
-
-                        foreach (var el in universities)
-                        {
-                            System.Console.WriteLine(el.ToString());
-                        }
+                        PrintUniversities();
                         break;
 					}
 
@@ -83,6 +49,56 @@ namespace GenericsExercise.Console
             return true;
 
         }
+
+        static void PrintUniversities()
+		{
+            var universities = universityService.GetAll();
+
+
+            foreach (var university in universities)
+            {
+                System.Console.WriteLine(university.ToString());
+            }
+        }
+
+        static void PrintStudents()
+		{
+            var students = studentService.GetAll();
+
+
+            foreach (var el in students)
+            {
+                System.Console.WriteLine(el.ToString());
+            }
+        }
+        static void InsertUniversity()
+		{
+            System.Console.WriteLine("Write Id(string between 1-10 without %)" +
+                            ", Name and Address for university. Each on different lines.");
+
+            string id = System.Console.ReadLine();
+            string name = System.Console.ReadLine();
+            string address = System.Console.ReadLine();
+
+            University uni = new University(id, name, address);
+
+            universityService.Insert(uni);
+        }
+
+        static void InsertStudent()
+		{
+
+            System.Console.WriteLine("Write Id(string between 1-10 without %)" +
+                ", First and Last Name for student. Each on different lines.");
+
+            string id = System.Console.ReadLine();
+            string firstname = System.Console.ReadLine();
+            string lastname = System.Console.ReadLine();
+
+            Student s = new Student(id, firstname, lastname);
+
+            studentService.Insert(s);
+        } 
         static void Main(string[] args)
         {
 

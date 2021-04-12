@@ -30,16 +30,7 @@ namespace homework01
 
 				case "2":
 					{
-						if (Car.Showroom.Count == 0)
-							Console.WriteLine("There are no cars.\n");
-						else
-						{
-							foreach(Car c in Car.Showroom)
-							{
-								Console.WriteLine(c.ToString());
-							}
-						}
-
+						PrintManufacturedCars();
 						break;
 					}
 
@@ -64,8 +55,8 @@ namespace homework01
 
 			string model = Console.ReadLine();
 			string package = Console.ReadLine();
-			int hp = Int32.Parse(Console.ReadLine());
-			double es = Double.Parse(Console.ReadLine());
+			int horsepower = Int32.Parse(Console.ReadLine());
+			double enginesize = Double.Parse(Console.ReadLine());
 
 			Console.WriteLine("Write the fuel type(D, B, E or GPL): ");
 
@@ -73,10 +64,27 @@ namespace homework01
 
 			Console.WriteLine("Automatic or Manual transmission?(true/false)");
 
-			bool t = Boolean.Parse(Console.ReadLine());
+			bool transmission = Boolean.Parse(Console.ReadLine());
 
-			Car c = new Car(model, package, hp, es, t, fuel);
+			Car car = new Car(model, package, horsepower, enginesize, transmission, fuel);
 
+		}
+
+		public static void PrintManufacturedCars()
+		{
+			if (Car.Showroom.Count == 0)
+			{
+				Console.WriteLine("There are no cars.\n");
+				return;
+			}
+
+			foreach (Car c in Car.Showroom)
+			{
+				Console.WriteLine(c.ToString());
+			}
+
+			return;
+			
 		}
 	}
 }

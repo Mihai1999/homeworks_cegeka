@@ -7,21 +7,22 @@ namespace homework01
 	class Car
 	{
 		public static List<Car> Showroom = new List<Car>();
-		public string model { get; set; }
-		public string package { get; set; }
-		public int horsePower { get; set; }
-		public double engineSize { get; set; }
-		public bool isManual { get; set; }
-		public string  fuel { get; set; }
+		public string Model { get; set; }
+		public string Package { get; set; }
+		public int HorsePower { get; set; }
+		public double EngineSize { get; set; }
+		public bool IsManual { get; set; }
+		public string  Fuel { get; set; }
 
-		public Car(string m, string p, int hp, double size, bool isM, string f)
+		public Car(string model, string package, int horsepower,
+			double size, bool isManual, string fuel)
 		{
-			model = m;
-			package = p;
-			horsePower = hp;
-			engineSize = size;
-			isManual = isM;
-			fuel = f;
+			Model = model;
+			Package = package;
+			HorsePower = horsepower;
+			EngineSize = size;
+			IsManual = isManual;
+			Fuel = fuel;
 			Showroom.Add(this);
 			
 		}
@@ -29,12 +30,12 @@ namespace homework01
 		override
 		public string ToString()
 		{
-			string output = model + " " + package + " package "  + horsePower +  " CP " + 
-				engineSize + " " + fuel;
+			string output = Model + " " + Package + " package "  + HorsePower +  " CP " + 
+				EngineSize + " " + Fuel;
 
 			output += " cutie ";
 
-			if (isManual) output += "manuala";
+			if (IsManual) output += "manuala";
 			else output += "automata";
 
 			return output;

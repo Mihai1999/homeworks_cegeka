@@ -6,7 +6,7 @@ class Register extends React.Component{
 
   state = {
     error: false,
-    users: {},
+    userList: {},
     user: {
       username:'',
       password:'',
@@ -17,20 +17,19 @@ class Register extends React.Component{
 
 
   componentWillMount(){
-    const localUsers = localStorage.getItem('users');
+    //const localUsers = localStorage.getItem('users');
+    const localUsers = this.props.users;
     console.log("localUsers: ", localUsers);
-    var users = {}
-    if(localUsers){
-      users = JSON.parse(localUsers);
-      
-    }
-
+    var users = localUsers;
+    console.log(users);
     this.setState({
-      users: users
+      userList: users
     })
 
-    console.log("storage users ", users);
-    console.log(this.isLoginForm());
+  }
+
+  componentWillUpdate(nextProps, nextState){
+    localStorage.setItem("users", JSON.stringify(nextState.userList));
   }
 
   handleInputChange(property, value) {
@@ -47,7 +46,7 @@ class Register extends React.Component{
   } 
 
   submitLogin(){
-    const users = {...this.users};
+    const users = {...this.userList};
     const user = {...this.user};
 
     if(!user && !users) return false;
@@ -58,21 +57,25 @@ class Register extends React.Component{
   }
 
   submitRegister(){
-    const users = {...this.users};
-    console.log(typeof users)
+    console.log("submit: ",{...this.userList});
+    console.log("user storage ", localStorage.getItem("users"));
+    const users =  JSON.parse(localStorage.getItem("users")) ;
+
     const timestamp = Date.now();
+    
     users[`${timestamp}`] = {...this.state.user};
     this.setState({
       users
     })
+    console.log("submit: ",users);
     
-    localStorage.setItem("users", JSON.stringify(users));
 
-    console.log(users);
+    
 
   }
 
   submitForm(){
+    console.log("submit2: ",{...this.userList});
     if(this.isLoginForm()){
       this.submitForm();
     }
@@ -93,6 +96,8 @@ class Register extends React.Component{
   }
   
   render(){
+
+    const {users} = this.props;
     return (
       <Grid textAlign='center' style={{ height:'50vh'}}  verticalAlign='middle' > 
         <Grid.Column style={{ maxWidth: 450 }}>

@@ -32,7 +32,16 @@ class Main extends React.Component{
       this.setState({
         albums: api.getAlbums(),
         photos: api.getPhotos(),
-        users: {}
+        users: {
+          user1:{
+            username: "mihai",
+            password: "parola1234"
+          },
+          user2:{
+            username: "alex",
+            password: "pass2"
+          }
+        }
       });
     }
 
@@ -46,6 +55,10 @@ class Main extends React.Component{
     localStorage.setItem(
       'photos', JSON.stringify(nextState.photos)
     );
+
+    localStorage.setItem(
+      'users', JSON.stringify(nextState.users)
+    )
   }
 
   deletePhoto = (key) => {
@@ -103,7 +116,7 @@ class Main extends React.Component{
 
   render(){
 
-    const {albums, photos} = this.state;
+    const {albums, photos, users} = this.state;
 
     const albumList = () => 
       <AlbumList 
@@ -128,6 +141,15 @@ class Main extends React.Component{
         header="Error"
       
       />;
+
+    const register = () => {
+      return(
+        <Register 
+        users = {users}
+      />
+      )
+      
+    }
       
     return (
       <Switch>
@@ -135,7 +157,7 @@ class Main extends React.Component{
         <Route path="/albums" render={albumList }/>
         <Route path="/photos" render={photoList}/>
         <Route path="/login" render={Login}/>
-        <Route path="/register" component={Register}/>
+        <Route path="/register" render={register}/>
         <Route render={error}/>
         
       </Switch>

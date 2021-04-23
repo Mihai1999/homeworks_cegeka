@@ -2,6 +2,8 @@ import React from 'react';
 import { Form } from 'semantic-ui-react';
 import { Message } from 'semantic-ui-react';
 import { Modal, Button, Icon } from 'semantic-ui-react';
+import * as actions from '../Actions//photoActions';
+import {connect} from 'react-redux';
 
 
 class PhotoForm extends React.Component {
@@ -53,15 +55,17 @@ class PhotoForm extends React.Component {
     }
     this.setState({error:false});
 
-    const {editPhoto, createPhoto, index} = this.props;
+    const {updatePhoto, createPhoto, index} = this.props;
     const {photo} = this.state;
 
     if(this.isNewForm()){
+      //createPhoto(photo);
       createPhoto(photo);
     }
     else{
       console.log(index, photo);
-      editPhoto(index, photo);
+      //editPhoto(index, photo);
+      updatePhoto(index, photo);
     }
     
 
@@ -70,11 +74,14 @@ class PhotoForm extends React.Component {
   }
 
   showForm = () => {
-    const {photo} = this.props;
+    console.log(this.props);
+    const key = this.props.index;
+    const photo = this.props.photos[key];
     this.setState({
       modalOpen:true,
       photo,
     });
+  
   }
 
   closeForm = () => {
@@ -86,6 +93,8 @@ class PhotoForm extends React.Component {
 
     return(
       <Modal
+        
+        style={{marginTop: "0px"}}
         trigger={
           <Button icon onClick={this.showForm}>
             <Icon name={this.isNewForm() ? 'plus' : 'edit'}/>
@@ -146,5 +155,22 @@ class PhotoForm extends React.Component {
 
 
 }
-export default PhotoForm;
+
+const mapStateToProps = (state) => {
+  return {
+    photos: state.photos,
+  }
+  
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deletePhoto: key => dispatch(actions.PhotoDeleted(key)),
+    updatePhoto: (key, photo) => dispatch(actions.PhotoUpdated(key, photo)),
+    createPhoto: photo => dispatch(actions.PhotoAdded(photo)),
+  }
+  
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PhotoForm);
 

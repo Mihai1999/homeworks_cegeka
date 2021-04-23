@@ -6,11 +6,13 @@ import  Photo  from "./Photo";
 import { Card} from "semantic-ui-react";
 import {WithLightbox, DeleteButton} from '../Common';
 import PhotoForm from './PhotoForm';
+import * as actions from '../Actions/photoActions';
+import {connect} from 'react-redux';
 
 
 const PhotoList = (props) => {
 
-    const {photos, createPhoto, editPhoto, deletePhoto} = props;
+    const {photos, createPhoto, updatePhoto, deletePhoto} = props;
 
     const renderPhotos = () => {
       return(
@@ -30,15 +32,16 @@ const PhotoList = (props) => {
                     formType='edit'
                     index={key}
                     photo={photo}
-                    editPhoto={editPhoto}
+                    //editPhoto={editPhoto}
                   />  
                 
                 </Button>
                    
                 <DeleteButton icon
                   index={key}
-                  objectName={photo.title}
+                  //objectName={photo.title}
                   deleteObject={deletePhoto}
+                  
                 />
 
               </Photo>
@@ -62,4 +65,21 @@ const PhotoList = (props) => {
     );
 
 }
-export default PhotoList;
+
+const mapStateToProps = (state) => {
+  console.log("mapstate: ", state.photos);
+  return {
+    photos: state.photos,
+  }
+  
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deletePhoto: key => dispatch(actions.PhotoDeleted(key)),
+    updatePhoto: (key, photo) => dispatch(actions.PhotoUpdated(key, photo)),
+    createPhoto: photo => dispatch(actions.PhotoAdded(photo)),
+  }
+  
+}
+export default connect(mapStateToProps, mapDispatchToProps)(PhotoList);

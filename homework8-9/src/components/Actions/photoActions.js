@@ -4,16 +4,16 @@ import * as actions from './actionTypes';
 export const PhotoAdded = (Photo) =>{
   const key = `${Date.now()}`;
   return {
-    type: actions.Photo_ADD,
+    type: actions.PHOTO_ADD,
     Photo,
     key,
   }
 }
 
 export const PhotoUpdated = (key, Photo) => {
-
+  console.log("photoUpdate: ", key, Photo)
   return {
-    type: actions.Photo_UPDATE,
+    type: actions.PHOTO_UPDATE,
     Photo,
     key
   }
@@ -21,7 +21,7 @@ export const PhotoUpdated = (key, Photo) => {
 
 export const PhotoDeleted = (key) => {
   return {
-    type: actions.Photo_DELETE,
+    type: actions.PHOTO_DELETE,
     key,
 
   }

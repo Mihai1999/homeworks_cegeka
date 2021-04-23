@@ -129,10 +129,10 @@ class Main extends React.Component{
     
     const photoList = () =>
       <PhotoList
-        photos = {photos}
-        deletePhoto={this.deletePhoto}
-        editPhoto={this.editAlbum}
-        createPhoto={this.createPhoto}
+        //photos = {photos}
+        //deletePhoto={this.deletePhoto}
+        //editPhoto={this.editAlbum}
+        //createPhoto={this.createPhoto}
       />;
 
     const error = () => 

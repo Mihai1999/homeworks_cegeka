@@ -3,21 +3,21 @@
   "description": "App to manage favorites photos from internet as albums.",
   "version": "1.0.0",
   "private": true,
-  "author": {
-    "name": "Arturo De la Garza",
-    "url": "https://twitter.com/agzertuche"
-  },
+  "author": "Arturo De la Garza (https://twitter.com/agzertuche)",
   "dependencies": {
+    "fbjs": "0.8.12",
+    "jQuery": "^1.7.4",
     "prop-types": "^15.7.2",
-    "react": "^16.0.0",
+    "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-images": "^0.5.11",
+    "react-redux": "^7.2.3",
     "react-router": "^4.2.0",
     "react-router-config": "^5.1.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.0.14",
     "redux": "^4.0.5",
-    "semantic-ui-css": "^2.2.12",
+    "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.75.1"
   },
   "devDependencies": {
@@ -54,5 +54,15 @@
         }
       ]
     }
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mihai1999/CegekaAcademy2021.Session9Homework.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mihai1999/CegekaAcademy2021.Session9Homework/issues"
+  },
+  "homepage": "https://github.com/Mihai1999/CegekaAcademy2021.Session9Homework#readme"
 }

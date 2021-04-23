@@ -28,10 +28,11 @@ class DeleteButton extends React.Component {
     const { deleteConfirmOpen } = this.state;
 
     return (
-      <Button icon onClick={() => this.handleDelete(index)}>
+      <Button icon onClick={() => this.handleDelete(index)} >
         <Icon name='trash' /> 
         {deleteConfirmOpen && 
           <Confirm 
+            style={{marginTop: "0px"}}
             open={deleteConfirmOpen}
             content={`Are you sure you want to delete '${objectName}'?`}
             cancelButton='No'

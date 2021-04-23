@@ -3,20 +3,18 @@ import * as api from '../api';
 export const loadState = () => {
   const localAlbums = localStorage.getItem('albums');
     const localPhotos = localStorage.getItem('photos');
-    const users = localStorage.getItem('users');
+    const localUsers = localStorage.getItem('users');
+    var albums = null, photos = null, users = null;
 
     if(localAlbums && localPhotos){
-      this.setState({
-        albums: JSON.parse(localAlbums),
-        photos: JSON.parse(localPhotos),
-        users: JSON.parse(users),
-      });
+      albums = JSON.parse(localAlbums);
+      photos = JSON.parse(localPhotos);
+      users = JSON.parse(localUsers);
 
     } else{
-      this.setState({
-        albums: api.getAlbums(),
-        photos: api.getPhotos(),
-        users: {
+      albums = api.getAlbums();
+      photos = api.getPhotos();
+      users = {
           user1:{
             username: "mihai",
             password: "parola1234"
@@ -26,13 +24,19 @@ export const loadState = () => {
             password: "pass2"
           }
         }
-      });
+    }
+
+    return {
+      albums: albums,
+      photos: photos,
+      users: users,
     }
 
 }
 
 export const saveState = (itemName, state) => {
   
+  console.log("saveState: ", itemName, state);
   localStorage.setItem(itemName, JSON.stringify(state));
 
 }
